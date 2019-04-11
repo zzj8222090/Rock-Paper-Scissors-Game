@@ -23,9 +23,45 @@ var randomProperty = function (obj) {
 function game(userChoice){
   var computer_choice = randomProperty(rock_paper_scissors);
   console.log(computer_choice);
-  if (computer_choice === userChoice){
-    console.log("Draw!");
+  if (userChoice === "r"){
+    switch (computer_choice) {
+      case "r":
+        console.log("Draw!!");
+        break;
+      case "p":
+        console.log("Paper covers rock. You lose!!");
+        break;
+      case "s":
+        console.log("Rock breaks scissors. You win!!");
+        break;
+    }
   }
+    if (userChoice === "p"){
+      switch (computer_choice) {
+        case "p":
+          console.log("Draw!!");
+          break;
+        case "r":
+          console.log("Paper covers rock. You win!!");
+          break;
+        case "s":
+          console.log("Scissors cut paper. You lose!!");
+          break;
+        }
+      }
+      if (userChoice === "s"){
+        switch (computer_choice) {
+          case "s":
+            console.log("Draw!!");
+            break;
+          case "p":
+            console.log("Scissors cut paper. You win!!");
+            break;
+          case "r":
+            console.log("Rock breaks scissors. You lose!!");
+            break;
+          }
+        }
 }
 
 function main(){
