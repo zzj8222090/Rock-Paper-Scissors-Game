@@ -9,16 +9,21 @@ const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
 const smallUserWord = "user".fontsize(3).sub();
 const smallCompWord = "comp".fontsize(3).sub();
-const rock_paper_scissors = {
-  'r':0,
-  'p':1,
-  's':2
-}
+// const rock_paper_scissors = {
+//   'r':0,
+//   'p':1,
+//   's':2
+// }
 
-var randomProperty = function (obj) {
-    var keys = Object.keys(obj);
-    return Object.keys(obj)[keys.length * Math.random() << 0];
-};
+// var randomProperty = function (obj) {
+//     var keys = Object.keys(obj);
+//     return Object.keys(obj)[keys.length * Math.random() << 0];
+// };
+
+function randomProperty(){
+  l = ["r", "p", "s"];
+  return l[Math.floor(Math.random()*3)];
+}
 
 function convetToWord(letter){
   if(letter === 'r') return "Rock";
@@ -56,7 +61,8 @@ function draw(userChoice, computerChoice){
 }
 
 function game(userChoice){
-  const computerChoice = randomProperty(rock_paper_scissors);
+  // const computerChoice = randomProperty(rock_paper_scissors);
+  const computerChoice = randomProperty();
   switch (userChoice + computerChoice) {
     case "rs":
     case "pr":
